@@ -3,63 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Transmisión</title>
+<title>Centro de Transmisiones</title>
 
 <style>
 body{
-    margin:0;
     background:#111;
     color:white;
     font-family:Arial,sans-serif;
+    margin:0;
 }
 
 header{
-    background:#1a1a1a;
-    padding:15px;
+    background:#1c1c1c;
     text-align:center;
-    font-size:28px;
+    padding:15px;
+    font-size:30px;
     font-weight:bold;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+.menu{
+    text-align:center;
     padding:20px;
 }
 
+button{
+    padding:12px 25px;
+    margin:5px;
+    font-size:18px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+}
+
 .player{
-    position:relative;
-    width:100%;
-    aspect-ratio:16/9;
-    background:#000;
-    border-radius:10px;
-    overflow:hidden;
+    width:90%;
+    max-width:1200px;
+    height:675px;
+    margin:20px auto;
 }
 
 iframe{
     width:100%;
     height:100%;
     border:none;
-    display:none;
-}
-
-.play{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:30px;
-    padding:20px 40px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-}
-
-.info{
-    margin-top:20px;
-    background:#1a1a1a;
-    padding:15px;
-    border-radius:10px;
+    background:black;
 }
 </style>
 </head>
@@ -67,33 +54,37 @@ iframe{
 <body>
 
 <header>
-⚽ Mi Transmisión
+📺 Centro de Transmisiones
 </header>
 
-<div class="container">
+<div class="menu">
+    <button onclick="cargar(1)">Canal 1</button>
+    <button onclick="cargar(2)">Canal 2</button>
+    <button onclick="cargar(3)">Canal 3</button>
+</div>
 
 <div class="player">
-
-<button class="play" onclick="iniciar()">
-▶ VER EN VIVO
-</button>
-
-<iframe id="stream"
-src="https://vdo.ninja/?view=TU_ID"></iframe>
-
-</div>
-
-<div class="info">
-<h2>Transmisión en Vivo</h2>
-<p>Haz clic en "VER EN VIVO" para cargar el stream.</p>
-</div>
-
+    <iframe id="visor"></iframe>
 </div>
 
 <script>
-function iniciar(){
-    document.querySelector(".play").style.display="none";
-    document.getElementById("stream").style.display="block";
+function cargar(canal){
+
+    if(canal==1){
+        document.getElementById("visor").src =
+        "https://vdo.ninja/?view=ID_CANAL_1";
+    }
+
+    if(canal==2){
+        document.getElementById("visor").src =
+        "https://vdo.ninja/?view=ID_CANAL_2";
+    }
+
+    if(canal==3){
+        document.getElementById("visor").src =
+        "https://vdo.ninja/?view=ID_CANAL_3";
+    }
+
 }
 </script>
 
