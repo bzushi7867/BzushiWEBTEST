@@ -92,32 +92,7 @@ function cargar(canal){
 
 }
 </script>
-    <button onclick="calidad('low')">360p</button>
-<button onclick="calidad('med')">720p</button>
-<button onclick="calidad('high')">1080p</button>
-
-<script>
-let idStream = "Hekyiy3";
-
-function calidad(tipo){
-
-    let url = "";
-
-    if(tipo=="low"){
-        url = "https://vdo.ninja/?view=" + idStream + "&quality=0";
-    }
-
-    if(tipo=="med"){
-        url = "https://vdo.ninja/?view=" + idStream + "&quality=1";
-    }
-
-    if(tipo=="high"){
-        url = "https://vdo.ninja/?view=" + idStream + "&quality=2";
-    }
-
-    document.getElementById("visor").src = url;
-}
-</script>
+ 
 
 </body>
 </html>
